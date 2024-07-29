@@ -4,7 +4,8 @@
     --white-color: #FFFFFF;
     --quote-color: #25282A;
     --author-color: #EE2737;
-    --quotebox-color: #FFF5FC;
+    --quotebox-color: #FBEAE3;
+    --quotebox-color-complement: #E3F4FB;
     --page-bg-color: #F5FFF8;
 }
 /* Reset */
@@ -15,7 +16,7 @@
 }
 
 body {
-    background-color: var(--page-bg-color);
+    /* background-color: var(--page-bg-color); */
 }
 
 .container {
@@ -31,59 +32,63 @@ h1 {
     font-weight: 400;
     font-style: normal;
     font-size: 28px;
+    color: var(--author-color);
     padding: 5px;
     margin-bottom: 10px;
 }
 
 .quote-box {
     background-color: var(--quotebox-color);
-    height: 250px;
+    background-image: linear-gradient(135deg, var(--quotebox-color),var(--quotebox-color-complement));
+    height: 450px;
     width: 350px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 5px;
 
     align-items: center;
     justify-content: center;
 
-    border: 1px solid var(--quote-color);
+    /* border: 1px solid var(--quote-color); */
     border-radius: 10px;
 }
 
 .text {
     font-family: "Esteban", serif;
     font-style: normal;
-    font-size: 16px;
+    font-size: 15px;
+    text-align: justify;
     grid-column: 1 / 4;
-    grid-row: 1 / 3;
+    grid-row: 1 / 5;
 
     padding: 10px;
 }
 
-.author, .btn {
+.author, #quote-btn {
     font-family: "Montserrat", sans-serif;
 }
 
 .author {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 900;
     color: var(--author-color);
     text-transform: uppercase;
+    text-align: center;
 
     grid-column: 2 / 3;
-    grid-row: 3 / 4;
+    grid-row: 5 / 7;
 
     padding: 10px;
 }
 
-.btn {
+#quote-btn {
     grid-column: 2 / 3;
-    grid-row: 4 / 5;
+    grid-row: 7 / 8;
 
-    height: 50px;
-    width: 150px;
+    height: 40px;
+    width: 120px;
     border-radius: 20px;
 
     display: flex;
@@ -96,6 +101,6 @@ h1 {
     cursor: pointer;
 }
 
-.btn:hover {
+#quote-btn:hover {
     background-color: var(--author-color);
 }
